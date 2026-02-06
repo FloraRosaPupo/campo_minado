@@ -58,5 +58,3 @@ flutter run
 
 ```
 
-Se quiser, posso deixar ainda mais curto (nível README de repositório top 1%) ou adaptar pra portfólio.
-```
