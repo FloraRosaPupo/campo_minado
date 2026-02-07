@@ -29,8 +29,14 @@ class _CardMatrizState extends State<CardMatriz>
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 30,
+      height: 30,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(5),
+        color: widget.eBomba ? Colors.red : Colors.grey[300],
+      ),
+
       margin: EdgeInsets.all(1),
-      color: widget.eBomba ? Colors.red : Colors.grey[300],
       child: Center(child: Text('${widget.posicao}')),
     );
   }

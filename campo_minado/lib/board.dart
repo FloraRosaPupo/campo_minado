@@ -53,6 +53,8 @@ class _BoardState extends State<Board> {
           ),
           padding: EdgeInsets.all(16),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Expanded(
                 child: Container(
@@ -91,7 +93,7 @@ class _BoardState extends State<Board> {
                       Container(
                         width: 50,
                         height: 50,
-                        alignment: Alignment.topCenter,
+
                         decoration: BoxDecoration(
                           color: const Color.fromARGB(255, 9, 230, 17),
                           borderRadius: BorderRadius.circular(50),
@@ -143,7 +145,12 @@ class _BoardState extends State<Board> {
                   ),
                 ),
               ),
-              Expanded(flex: 3, child: campo_minado),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.8,
+                height: MediaQuery.of(context).size.height * 0.7,
+
+                child: campo_minado,
+              ),
             ],
           ),
         ),
