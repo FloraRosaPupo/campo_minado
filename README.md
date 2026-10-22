@@ -1,4 +1,3 @@
-
 # 💣 Campo Minado — Flutter Mobile
 
 Jogo **Campo Minado** desenvolvido em **Flutter** para dispositivos **mobile (Android/iOS)**, com foco em lógica de jogo, organização de código e boa experiência de uso.
@@ -58,3 +57,17 @@ flutter run
 
 ```
 
+
+
+## Desenvolvimento e validação
+
+O aplicativo está em `campo_minado`. Use Flutter 3.41.1. Na pasta do aplicativo, execute:
+
+```sh
+flutter pub get
+flutter analyze --no-fatal-infos --no-fatal-warnings
+flutter test
+flutter run
+```
+
+A CI valida análise e testes em pushes e pull requests. Serviços externos precisam de configuração própria.
