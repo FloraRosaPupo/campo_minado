@@ -71,3 +71,20 @@ flutter run
 ```
 
 A CI valida análise e testes em pushes e pull requests. Serviços externos precisam de configuração própria.
+
+
+## Stack e bibliotecas
+
+Flutter/Dart e domínio Dart.
+
+
+## Licença
+
+Não há licença de distribuição definida neste repositório. Os direitos de terceiros e as atribuições existentes devem ser respeitados; esta revisão não concede permissão de redistribuição.
+
+
+## Organização e manutenção
+
+Uma única funcionalidade com domínio e apresentação já separados. `GerarTabuleiro` mantém regra pura e é testável sem interface. Estrutura em português foi preservada; não há Cubits de features diferentes misturados.
+
+Veja [a revisão de desenvolvimento](docs/REVISAO.md) para decisões, testes e limites, e [o guia de contribuição](CONTRIBUTING.md) para o fluxo de manutenção.
