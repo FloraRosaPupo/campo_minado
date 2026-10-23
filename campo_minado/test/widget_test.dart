@@ -1,30 +1,22 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:campo_minado/main.dart';
-
+import 'package:campo_minado/dominio/casos_de_uso/gerar_tabuleiro.dart';
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
-
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+  test('tabuleiro contém bombas únicas e contagem correta dos vizinhos', () {
+    final cells=GerarTabuleiro().executar(linhas:4,colunas:4,bombas:5);
+    expect(cells.length,16);
+    expect(cells.where((c)=>c.eBomba).length,5);
+    for(final cell in cells.where((c)=>!c.eBomba)) {
+      final row=cell.id~/4; final col=cell.id%4;
+      final neighbors=cells.where((other)=>other.eBomba &&
+        ((other.id~/4)-row).abs()<=1 && ((other.id%4)-col).abs()<=1);
+      expect(cell.bombasAdjacentes,neighbors.length);
+    }
+  });
+  test('dimensões inválidas são rejeitadas', () {
+    expect(()=>GerarTabuleiro().executar(linhas:0,colunas:4,bombas:1),throwsArgumentError);
+  });
+  test('sempre reserva ao menos uma célula segura', () {
+    final cells=GerarTabuleiro().executar(linhas:2,colunas:2,bombas:10);
+    expect(cells.where((c)=>!c.eBomba).length,1);
   });
 }

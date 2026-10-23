@@ -4,6 +4,9 @@ import 'package:campo_minado/dominio/entidades/celula.dart';
 class GerarTabuleiro {
   /// Gera um tabuleiro com [linhas], [colunas] e [bombas] nas posições aleatórias.
   List<Celula> executar({required int linhas, required int colunas, required int bombas}) {
+    if (linhas <= 0 || colunas <= 0 || bombas < 0) {
+      throw ArgumentError('Dimensões devem ser positivas e bombas não negativas.');
+    }
     final totalCelulas = linhas * colunas;
     if (bombas >= totalCelulas) bombas = totalCelulas - 1;
 
