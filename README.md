@@ -1,8 +1,28 @@
-# 💣 Campo Minado — Flutter Mobile
+# Campo Minado — Flutter
 
-Jogo **Campo Minado** desenvolvido em **Flutter** para dispositivos **mobile (Android/iOS)**, com foco em lógica de jogo, organização de código e boa experiência de uso.
+## Descrição
 
----
+Jogo de Campo Minado desenvolvido em Flutter, com geração de tabuleiro, seleção de nível e interação com células. As regras de geração e vizinhança ficam separadas da apresentação.
+
+## Stack e bibliotecas
+
+Flutter/Dart e domínio Dart.
+
+Dependências e versões declaradas: [campo_minado/pubspec.yaml](campo_minado/pubspec.yaml).
+
+## Funcionalidades
+
+- Geração do tabuleiro.
+- Seleção de nível.
+- Abertura de células.
+
+## Licença
+
+Não há uma licença de distribuição definida para este repositório. Nenhuma licença MIT, Apache ou equivalente é concedida por este README. As atribuições e os direitos dos materiais de terceiros permanecem preservados.
+
+## Validação e limites
+
+Bombas únicas, vizinhança, dimensões inválidas e célula segura. Testes não validam todo o fluxo de desbloqueio em dispositivo.
 
 ## 🎯 Objetivo
 Praticar Flutter através da implementação de um jogo clássico, aplicando boas práticas de UI e separação de responsabilidades.
@@ -14,16 +34,6 @@ Praticar Flutter através da implementação de um jogo clássico, aplicando boa
 - Flutter
 - Sem backend
 - Sem login
-
----
-
-## 🧩 Funcionalidades
-- Tabuleiro em grade com minas aleatórias
-- Revelação de células por toque
-- Marcação de bandeiras (long press)
-- Contador de tempo e minas
-- Detecção de vitória e derrota
-- Reinício do jogo
 
 ---
 
@@ -56,7 +66,6 @@ flutter run
 * Ranking local
 
 ```
-
 
 
 ## Desenvolvimento e validação
